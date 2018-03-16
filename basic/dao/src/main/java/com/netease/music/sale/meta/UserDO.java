@@ -1,4 +1,4 @@
-package com.netease.music.sale.domain;
+package com.netease.music.sale.meta;
 
 
 /**
@@ -8,17 +8,33 @@ package com.netease.music.sale.domain;
  * @CreateDate: 2018/3/13 14:43
  * <div>问：如何惹恼 Web 开发者？</span>
  **/
-public class User {
+public class UserDO {
+    private Integer userID;
     private String userName;
     private String userPassword;
     private Integer userType;
 
-    public User() {
+    public UserDO() {
     }
 
-    public User(String userName, String userPassword, Integer userType) {
+    public UserDO(String userName, String userPassword) {
         this.userName = userName;
         this.userPassword = userPassword;
+    }
+
+    public Integer getUserID() {
+        return userID;
+    }
+
+    public void setUserID(Integer userID) {
+        this.userID = userID;
+    }
+
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
         this.userType = userType;
     }
 
@@ -40,9 +56,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userName='" + userName + '\'' +
+        return "UserDO{" +
+                "userID=" + userID +
+                ", userName='" + userName + '\'' +
                 ", userPassword='" + userPassword + '\'' +
+                ", userType=" + userType +
                 '}';
     }
 }

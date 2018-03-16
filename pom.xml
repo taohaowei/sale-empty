@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.netease.music</groupId>
@@ -22,18 +22,73 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<sale.version>1.0-SNAPSHOT</sale.version>
 	</properties>
 
 
 	<dependencies>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- 热部署 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 	</dependencies>
+
+	<!-- 方便管理版本 -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>api</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>basic</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>entrance</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>manager</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>service</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>common</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>dao</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netease.music</groupId>
+				<artifactId>web</artifactId>
+				<version>${sale.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<modules>
 		<module>api</module>

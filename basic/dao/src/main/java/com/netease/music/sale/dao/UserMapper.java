@@ -1,8 +1,10 @@
 package com.netease.music.sale.dao;
 
+import com.netease.music.sale.meta.UserDO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,8 +18,11 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserMapper {
 
-//    @Insert("Insert into sale_user(userName,userPassword,userType) values(#{user.userName},#{user.userPassword},#{user.userType})")
-//    public int insert(@Param("userName") String userName,@Param("userPassword") String userPassword, @Param("userType")Integer userType);
-//    public int insert(@Param("user") User user);
+    @Insert("Insert into User(userName,userPassword,userType) values(#{user.userName},#{user.userPassword},#{user.userType})")
+    public int insert(@Param("user") UserDO userDO);
+
+
+    @Select("select * from User where userName=#{user.userName} and userPassword = #{user.userPassword}")
+    public UserDO findOne(@Param("user")UserDO userDO);
 }
 

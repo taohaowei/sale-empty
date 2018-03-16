@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.netease.music</groupId>
-        <artifactId>sale-basic</artifactId>
+        <artifactId>basic</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.netease.music</groupId>
-    <artifactId>shopping-cache</artifactId>
+    <artifactId>cache</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     

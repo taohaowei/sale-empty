@@ -1,4 +1,4 @@
-package com.netease.sale;
+package com.netease.music.sale;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

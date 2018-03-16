@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.netease.music</groupId>
-        <artifactId>sale-entrance</artifactId>
+        <artifactId>entrance</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.netease.music</groupId>
-    <artifactId>sale-mq</artifactId>
+    <artifactId>mq</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     
