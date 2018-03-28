@@ -1,6 +1,8 @@
 package com.netease.music.sale.meta;
 
 
+import java.io.Serializable;
+
 /**
  * @Description: java类作用描述
  * @Author: 陶浩伟
@@ -8,8 +10,9 @@ package com.netease.music.sale.meta;
  * @CreateDate: 2018/3/13 14:43
  * <div>问：如何惹恼 Web 开发者？</span>
  **/
-public class UserDO {
-    private Integer userID;
+public class UserDO implements Serializable{
+
+    private Long userID;
     private String userName;
     private String userPassword;
     private Integer userType;
@@ -22,11 +25,11 @@ public class UserDO {
         this.userPassword = userPassword;
     }
 
-    public Integer getUserID() {
+    public Long getUserID() {
         return userID;
     }
 
-    public void setUserID(Integer userID) {
+    public void setUserID(Long userID) {
         this.userID = userID;
     }
 

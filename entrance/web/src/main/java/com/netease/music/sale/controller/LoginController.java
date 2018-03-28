@@ -1,9 +1,7 @@
 package com.netease.music.sale.controller;
 
-import com.netease.music.sale.exception.LoginEnum;
-import com.netease.music.sale.exception.LoginException;
+import com.netease.music.sale.Constant.ResultEnum;
 import com.netease.music.sale.meta.UserDO;
-import com.netease.music.sale.result.Result;
 import com.netease.music.sale.service.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,24 +19,39 @@ import javax.servlet.http.HttpSession;
  * 用作登陆
  **/
 @Controller
-public class LoginController {
+@RequestMapping(value = "/view")
+public class LoginController extends BaseController{
 
     @Resource
     private LoginService loginService;
 
+    @RequestMapping("/login")
+    public String test()
+    {
+        return "index";
+    }
 
-//    @GetMapping("/login")
+
     @ResponseBody
-    @RequestMapping(name = "/login")
-    public String result(@RequestParam("userName") String userName, @RequestParam("userPassword") String userPassword, HttpSession session)
+    @RequestMapping("/api/musician/sale/login")
+    public String login(@RequestParam("user_name") String userName, @RequestParam("user_password") String userPassword, HttpSession session)
     {
         UserDO userDO = loginService.login(userName, userPassword);
         if(userDO==null){
-            return new Result<UserDO>().appendCode(LoginEnum.LOGIN_FAILD.getCode()).appendMessage(LoginEnum.LOGIN_FAILD.getMessage()).jsonValue();
+            return outFaild(ResultEnum.LOGIN_FAILD);
         }
 
         session.setAttribute("user",userDO);
-        return  new Result<UserDO>().appendCode(LoginEnum.LONGIN_SUCCESS.getCode()).appendMessage(LoginEnum.LONGIN_SUCCESS.getMessage()).jsonValue();
+        return outSuccess();
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/api/musician/sale/unlogin")
+    public String unlogin(HttpSession session)
+    {
+        session.setAttribute("user", null);
+        return outSuccess();
     }
 }
 

@@ -1,4 +1,4 @@
-package com.netease.music.sale.exception;
+package com.netease.music.sale.Constant;
 
 /**
  * @Description: java类作用描述

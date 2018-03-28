@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8"/>
-<title>java</title>
-<link rel="stylesheet" href="../css/style.css"/>
-</head>
+<#include "/include/head.ftl">
 <body>
+<#include "/include/support.ftl">
+<#include "/include/header.ftl">
 <form class="m-form m-form-ht n-login" id="loginForm" onsubmit="return false;" autocomplete="off">
     <div class="fmitem">
         <label class="fmlab">用户名：</label>
@@ -25,11 +23,9 @@
         </div>
     </div>
 </form>
-<div class="n-foot">
-    <p>版权所有：网易云课堂<a href="http://mooc.study.163.com/smartSpec/detail/85002.htm">Java开发工程师(Web方向)</a>微专业团队</p>
-</div>
-<script type="text/javascript" src="../js/md5.js"></script>
-<script type="text/javascript" src="../js/global.js"></script>
-<script type="text/javascript" src="../js/pageLogin.js"></script>
+<#include "/include/footer.ftl">
+<script type="text/javascript" src="/js/md5.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/pageLogin.js"></script>
 </body>
 </html>

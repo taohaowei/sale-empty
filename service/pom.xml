@@ -22,5 +22,9 @@
             <groupId>com.netease.music</groupId>
             <artifactId>api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.netease.music</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -2,7 +2,7 @@ package com.netease.music.sale.result;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.netease.music.sale.exception.BaseErrorEnum;
+import com.netease.music.sale.Constant.BaseErrorEnum;
 
 /**
  * @Description: java类作用描述

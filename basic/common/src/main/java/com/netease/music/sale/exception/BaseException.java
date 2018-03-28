@@ -7,10 +7,10 @@ package com.netease.music.sale.exception;
  * @CreateDate: 2018/3/16 10:11
  * <div>问：如何惹恼 Web 开发者？</span>
  **/
-public class LoginException extends RuntimeException {
+public class BaseException extends RuntimeException {
     private Integer code;
 
-    public LoginException(String message, Integer code) {
+    public BaseException(String message, Integer code) {
         super(message);
         this.code = code;
     }

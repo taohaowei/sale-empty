@@ -1,5 +1,6 @@
 package com.netease.music.sale.exception;
 
+import com.netease.music.sale.Constant.ResultEnum;
 import com.netease.music.sale.result.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +24,9 @@ public class ExceptionHandle {
     @ResponseBody
     public String Handle(Exception e)
     {
-        if(e instanceof LoginException)
+        if(e instanceof BaseException)
         {
-            LoginException loginException = (LoginException)e;
+            BaseException loginException = (BaseException)e;
             return new Result().appendCode(loginException.getCode()).appendMessage(loginException.getMessage()).jsonValue();
         }else{
             LOGGER.error("【系统异常】{}",e);
